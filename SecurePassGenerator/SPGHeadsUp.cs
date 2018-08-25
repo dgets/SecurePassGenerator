@@ -17,12 +17,7 @@ namespace SecurePassGenerator
             InitializeComponent();
         }
 
-        private void lblTitle_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPWField_Click(object sender, EventArgs e)
+        private void clbCharOpts_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -33,7 +33,10 @@
             this.clbCharOpts = new System.Windows.Forms.CheckedListBox();
             this.btnGo = new System.Windows.Forms.Button();
             this.lblPWField = new System.Windows.Forms.Label();
+            this.nudCharNums = new System.Windows.Forms.NumericUpDown();
+            this.lblCharNums = new System.Windows.Forms.Label();
             this.gbxCharOpts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCharNums)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -49,6 +52,8 @@
             // 
             // gbxCharOpts
             // 
+            this.gbxCharOpts.Controls.Add(this.lblCharNums);
+            this.gbxCharOpts.Controls.Add(this.nudCharNums);
             this.gbxCharOpts.Controls.Add(this.clbCharOpts);
             this.gbxCharOpts.Location = new System.Drawing.Point(27, 101);
             this.gbxCharOpts.Name = "gbxCharOpts";
@@ -64,12 +69,14 @@
             this.clbCharOpts.Name = "clbCharOpts";
             this.clbCharOpts.Size = new System.Drawing.Size(188, 109);
             this.clbCharOpts.TabIndex = 2;
+            this.clbCharOpts.SelectedIndexChanged += new System.EventHandler(this.clbCharOpts_SelectedIndexChanged);
             // 
             // btnGo
             // 
-            this.btnGo.Location = new System.Drawing.Point(233, 120);
+            this.btnGo.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGo.Location = new System.Drawing.Point(233, 101);
             this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(166, 146);
+            this.btnGo.Size = new System.Drawing.Size(166, 165);
             this.btnGo.TabIndex = 2;
             this.btnGo.Text = "Go";
             this.btnGo.UseVisualStyleBackColor = true;
@@ -85,6 +92,37 @@
             this.lblPWField.Text = "Your New Password Here";
             this.lblPWField.Click += new System.EventHandler(this.lblPWField_Click);
             // 
+            // nudCharNums
+            // 
+            this.nudCharNums.Location = new System.Drawing.Point(139, 134);
+            this.nudCharNums.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudCharNums.Minimum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            this.nudCharNums.Name = "nudCharNums";
+            this.nudCharNums.Size = new System.Drawing.Size(55, 20);
+            this.nudCharNums.TabIndex = 3;
+            this.nudCharNums.Value = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            // 
+            // lblCharNums
+            // 
+            this.lblCharNums.AutoSize = true;
+            this.lblCharNums.Location = new System.Drawing.Point(6, 136);
+            this.lblCharNums.Name = "lblCharNums";
+            this.lblCharNums.Size = new System.Drawing.Size(130, 13);
+            this.lblCharNums.TabIndex = 4;
+            this.lblCharNums.Text = "Characters in Passphrase:";
+            // 
             // PWGMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -97,6 +135,8 @@
             this.Name = "PWGMain";
             this.Text = "Damo\'s Secure PWGen";
             this.gbxCharOpts.ResumeLayout(false);
+            this.gbxCharOpts.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCharNums)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,6 +149,8 @@
         private System.Windows.Forms.CheckedListBox clbCharOpts;
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.Label lblPWField;
+        private System.Windows.Forms.Label lblCharNums;
+        private System.Windows.Forms.NumericUpDown nudCharNums;
     }
 }
 

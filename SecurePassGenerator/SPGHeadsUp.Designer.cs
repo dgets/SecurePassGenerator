@@ -30,11 +30,11 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.gbxCharOpts = new System.Windows.Forms.GroupBox();
+            this.lblCharNums = new System.Windows.Forms.Label();
+            this.nudCharNums = new System.Windows.Forms.NumericUpDown();
             this.clbCharOpts = new System.Windows.Forms.CheckedListBox();
             this.btnGo = new System.Windows.Forms.Button();
             this.lblPWField = new System.Windows.Forms.Label();
-            this.nudCharNums = new System.Windows.Forms.NumericUpDown();
-            this.lblCharNums = new System.Windows.Forms.Label();
             this.gbxCharOpts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCharNums)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +48,6 @@
             this.lblTitle.Size = new System.Drawing.Size(393, 89);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Damo\'s Secure/Random Password Generator";
-            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             // 
             // gbxCharOpts
             // 
@@ -62,35 +61,14 @@
             this.gbxCharOpts.TabStop = false;
             this.gbxCharOpts.Text = "Character Options";
             // 
-            // clbCharOpts
+            // lblCharNums
             // 
-            this.clbCharOpts.FormattingEnabled = true;
-            this.clbCharOpts.Location = new System.Drawing.Point(6, 19);
-            this.clbCharOpts.Name = "clbCharOpts";
-            this.clbCharOpts.Size = new System.Drawing.Size(188, 109);
-            this.clbCharOpts.TabIndex = 2;
-            this.clbCharOpts.SelectedIndexChanged += new System.EventHandler(this.clbCharOpts_SelectedIndexChanged);
-            // 
-            // btnGo
-            // 
-            this.btnGo.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGo.Location = new System.Drawing.Point(233, 101);
-            this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(166, 165);
-            this.btnGo.TabIndex = 2;
-            this.btnGo.Text = "Go";
-            this.btnGo.UseVisualStyleBackColor = true;
-            // 
-            // lblPWField
-            // 
-            this.lblPWField.AutoSize = true;
-            this.lblPWField.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPWField.Location = new System.Drawing.Point(24, 269);
-            this.lblPWField.Name = "lblPWField";
-            this.lblPWField.Size = new System.Drawing.Size(161, 15);
-            this.lblPWField.TabIndex = 3;
-            this.lblPWField.Text = "Your New Password Here";
-            this.lblPWField.Click += new System.EventHandler(this.lblPWField_Click);
+            this.lblCharNums.AutoSize = true;
+            this.lblCharNums.Location = new System.Drawing.Point(6, 136);
+            this.lblCharNums.Name = "lblCharNums";
+            this.lblCharNums.Size = new System.Drawing.Size(130, 13);
+            this.lblCharNums.TabIndex = 4;
+            this.lblCharNums.Text = "Characters in Passphrase:";
             // 
             // nudCharNums
             // 
@@ -114,14 +92,33 @@
             0,
             0});
             // 
-            // lblCharNums
+            // clbCharOpts
             // 
-            this.lblCharNums.AutoSize = true;
-            this.lblCharNums.Location = new System.Drawing.Point(6, 136);
-            this.lblCharNums.Name = "lblCharNums";
-            this.lblCharNums.Size = new System.Drawing.Size(130, 13);
-            this.lblCharNums.TabIndex = 4;
-            this.lblCharNums.Text = "Characters in Passphrase:";
+            this.clbCharOpts.FormattingEnabled = true;
+            this.clbCharOpts.Location = new System.Drawing.Point(6, 19);
+            this.clbCharOpts.Name = "clbCharOpts";
+            this.clbCharOpts.Size = new System.Drawing.Size(188, 109);
+            this.clbCharOpts.TabIndex = 2;
+            // 
+            // btnGo
+            // 
+            this.btnGo.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGo.Location = new System.Drawing.Point(233, 101);
+            this.btnGo.Name = "btnGo";
+            this.btnGo.Size = new System.Drawing.Size(166, 165);
+            this.btnGo.TabIndex = 2;
+            this.btnGo.Text = "Go";
+            this.btnGo.UseVisualStyleBackColor = true;
+            // 
+            // lblPWField
+            // 
+            this.lblPWField.AutoSize = true;
+            this.lblPWField.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPWField.Location = new System.Drawing.Point(24, 269);
+            this.lblPWField.Name = "lblPWField";
+            this.lblPWField.Size = new System.Drawing.Size(161, 15);
+            this.lblPWField.TabIndex = 3;
+            this.lblPWField.Text = "Your New Password Here";
             // 
             // PWGMain
             // 

@@ -11,12 +11,11 @@ using System.Windows.Forms;
 namespace SecurePassGenerator
 {
     public partial class PWGMain : Form {
-        //settings
         private Dictionary<string, bool> charOpts = new Dictionary<string, bool>
-            { { "alphabetic", true }, { "upper", false }, { "numeric", true }, 
-              { "symbolic", false } };
+                { { "alphabetic", true }, { "upper", false }, { "numeric", true },
+                  { "symbolic", false } };
 
-        public PWGMain() {
+        public PWGMain() {        
             InitializeComponent();
 
             //global level init

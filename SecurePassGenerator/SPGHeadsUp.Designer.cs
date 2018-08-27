@@ -94,11 +94,13 @@
             // 
             // clbCharOpts
             // 
+            this.clbCharOpts.CheckOnClick = true;
             this.clbCharOpts.FormattingEnabled = true;
             this.clbCharOpts.Location = new System.Drawing.Point(6, 19);
             this.clbCharOpts.Name = "clbCharOpts";
             this.clbCharOpts.Size = new System.Drawing.Size(188, 109);
             this.clbCharOpts.TabIndex = 2;
+            this.clbCharOpts.Click += new System.EventHandler(this.clbCharOpts_OnClick);
             // 
             // btnGo
             // 
@@ -109,6 +111,7 @@
             this.btnGo.TabIndex = 2;
             this.btnGo.Text = "Go";
             this.btnGo.UseVisualStyleBackColor = true;
+            this.btnGo.Click += new System.EventHandler(this.btnGo_OnClick);
             // 
             // lblPWField
             // 

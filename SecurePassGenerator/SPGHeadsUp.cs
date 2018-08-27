@@ -11,28 +11,21 @@ using System.Windows.Forms;
 namespace SecurePassGenerator
 {
     public partial class PWGMain : Form {
-        public PWGMain() {
-            //init
-            Dictionary<string, bool> charOpts = 
-                new Dictionary<string, bool> { { "alphabetic", true }, 
-                    { "upper", false }, { "numeric", true }, 
-                    { "symbolic", false } };
+        private Dictionary<string, bool> charOpts = new Dictionary<string, bool>
+                { { "alphabetic", true }, { "upper", false }, { "numeric", true },
+                  { "symbolic", false } };
 
+        public PWGMain() {        
             InitializeComponent();
 
+            //global level init
             //GUI init
-            initClbCharOpts(charOpts);
+            initClbCharOpts();
         }
 
-        //public static Dictionary<string, bool> CharOpts { get => charOpts; set => charOpts = value; }
-
-        private void initClbCharOpts(Dictionary<string, Boolean> optsSet) {
-            foreach (string charOption in optsSet.Keys) {
-                if (optsSet[charOption] == true) {
-                    clbCharOpts.Items.Add(charOption, true);
-                } else {
-                    clbCharOpts.Items.Add(charOption, false);
-                }
+        private void initClbCharOpts() {
+            foreach (string charOption in charOpts.Keys) {
+                clbCharOpts.Items.Add(charOption, charOpts[charOption]);
             }
         }
     }

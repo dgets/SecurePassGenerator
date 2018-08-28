@@ -79,7 +79,7 @@
             0,
             0});
             this.nudCharNums.Minimum = new decimal(new int[] {
-            6,
+            4,
             0,
             0,
             0});
@@ -87,7 +87,7 @@
             this.nudCharNums.Size = new System.Drawing.Size(55, 20);
             this.nudCharNums.TabIndex = 3;
             this.nudCharNums.Value = new decimal(new int[] {
-            6,
+            8,
             0,
             0,
             0});

@@ -12,8 +12,8 @@ namespace SecurePassGenerator
 {
     public partial class PWGMain : Form {
         public Dictionary<string, bool> charOpts = new Dictionary<string, bool>
-            { { "alphabetic", true }, { "upper", false }, { "numeric", true },
-              { "symbolic", false } };        
+            { { "alphaLower", true }, { "alphaUpper", false }, 
+              { "numbers", true }, { "symbols", false } };        
 
         public bool debugging = false;
 
@@ -52,7 +52,7 @@ namespace SecurePassGenerator
         private void btnGo_OnClick(object sender, EventArgs e) {
             Generator pwEngine = new Generator();
 
-
+            lblPWField.Text = pwEngine.getNewPW((int)nudCharNums.Value);
         }
     }
 }

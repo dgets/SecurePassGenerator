@@ -15,13 +15,19 @@ namespace SecurePassGenerator
             { { "alphaLower", true }, { "alphaUpper", false }, 
               { "numbers", true }, { "symbols", false } };        
 
-        public bool debugging = false;
+        public bool debugging = true;
 
         public PWGMain() {        
             InitializeComponent();
 
             //GUI init
             initClbCharOpts();
+
+            //just for debugging
+            if (debugging) {
+                //longer passwords mean more data to work with
+                nudCharNums.Value = 128;
+            }
         }
 
         private void initClbCharOpts() {
@@ -50,6 +56,12 @@ namespace SecurePassGenerator
         }
 
         private void btnGo_OnClick(object sender, EventArgs e) {
+            Generator pwEngine = new Generator();
+
+            lblPWField.Text = pwEngine.getNewPW((int)nudCharNums.Value);
+        }
+
+        private void clbCharOpts_MouseClick(object sender, MouseEventArgs e) {
             Generator pwEngine = new Generator();
 
             lblPWField.Text = pwEngine.getNewPW((int)nudCharNums.Value);

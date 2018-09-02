@@ -41,7 +41,8 @@ namespace SecurePassGenerator
 
             Generator pwEngine = new Generator();
 
-            lblPWField.Text = pwEngine.getNewPW((int)nudCharNums.Value);
+            //lblPWField.Text = pwEngine.getNewPW((int)nudCharNums.Value);
+            tbxPWField.Text = pwEngine.getNewPW((int)nudCharNums.Value);
         }
 
         private void probeNSetPWSet() {

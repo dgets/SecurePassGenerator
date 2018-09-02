@@ -35,6 +35,7 @@
             this.clbCharOpts = new System.Windows.Forms.CheckedListBox();
             this.btnGo = new System.Windows.Forms.Button();
             this.lblPWField = new System.Windows.Forms.Label();
+            this.tbxPWField = new System.Windows.Forms.TextBox();
             this.gbxCharOpts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCharNums)).BeginInit();
             this.SuspendLayout();
@@ -122,11 +123,23 @@
             this.lblPWField.TabIndex = 3;
             this.lblPWField.Text = "Your New Password Here";
             // 
+            // tbxPWField
+            // 
+            this.tbxPWField.Location = new System.Drawing.Point(27, 288);
+            this.tbxPWField.MaxLength = 255;
+            this.tbxPWField.Name = "tbxPWField";
+            this.tbxPWField.ReadOnly = true;
+            this.tbxPWField.Size = new System.Drawing.Size(372, 20);
+            this.tbxPWField.TabIndex = 4;
+            this.tbxPWField.Text = "Your new password will soon be here";
+            this.tbxPWField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // PWGMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(411, 340);
+            this.Controls.Add(this.tbxPWField);
             this.Controls.Add(this.lblPWField);
             this.Controls.Add(this.btnGo);
             this.Controls.Add(this.gbxCharOpts);
@@ -150,6 +163,7 @@
         private System.Windows.Forms.Label lblPWField;
         private System.Windows.Forms.Label lblCharNums;
         private System.Windows.Forms.NumericUpDown nudCharNums;
+        private System.Windows.Forms.TextBox tbxPWField;
     }
 }
 

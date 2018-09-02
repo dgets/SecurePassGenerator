@@ -79,7 +79,7 @@
             0,
             0});
             this.nudCharNums.Minimum = new decimal(new int[] {
-            6,
+            4,
             0,
             0,
             0});
@@ -87,13 +87,14 @@
             this.nudCharNums.Size = new System.Drawing.Size(55, 20);
             this.nudCharNums.TabIndex = 3;
             this.nudCharNums.Value = new decimal(new int[] {
-            6,
+            8,
             0,
             0,
             0});
             // 
             // clbCharOpts
             // 
+            this.clbCharOpts.CheckOnClick = true;
             this.clbCharOpts.FormattingEnabled = true;
             this.clbCharOpts.Location = new System.Drawing.Point(6, 19);
             this.clbCharOpts.Name = "clbCharOpts";
@@ -109,6 +110,7 @@
             this.btnGo.TabIndex = 2;
             this.btnGo.Text = "Go";
             this.btnGo.UseVisualStyleBackColor = true;
+            this.btnGo.Click += new System.EventHandler(this.btnGo_OnClick);
             // 
             // lblPWField
             // 

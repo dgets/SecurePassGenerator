@@ -69,10 +69,18 @@ namespace SecurePassGenerator
             }
         }
 
-        /*private void clbCharOpts_MouseClick(object sender, MouseEventArgs e) {
-            Generator pwEngine = new Generator();
+        private void btnCopyToClipboard_Click(object sender, EventArgs e) {
+            //has a password been generated?
+            if (tbxPWField.Text.Equals("Your new password will soon be here")) {
+                MessageBox.Show("You must first generate a new password!",
+                    "No Password Created", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            lblPWField.Text = pwEngine.getNewPW((int)nudCharNums.Value);
-        }*/
+                return;
+            }
+
+            Clipboard.SetText(tbxPWField.Text);
+            MessageBox.Show("Your password has been copied to the clipboard!",
+                "Copied to clipboard", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

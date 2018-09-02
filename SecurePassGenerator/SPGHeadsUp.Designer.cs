@@ -34,8 +34,8 @@
             this.nudCharNums = new System.Windows.Forms.NumericUpDown();
             this.clbCharOpts = new System.Windows.Forms.CheckedListBox();
             this.btnGo = new System.Windows.Forms.Button();
-            this.lblPWField = new System.Windows.Forms.Label();
             this.tbxPWField = new System.Windows.Forms.TextBox();
+            this.btnCopyToClipboard = new System.Windows.Forms.Button();
             this.gbxCharOpts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCharNums)).BeginInit();
             this.SuspendLayout();
@@ -113,19 +113,10 @@
             this.btnGo.UseVisualStyleBackColor = true;
             this.btnGo.Click += new System.EventHandler(this.btnGo_OnClick);
             // 
-            // lblPWField
-            // 
-            this.lblPWField.AutoSize = true;
-            this.lblPWField.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPWField.Location = new System.Drawing.Point(24, 269);
-            this.lblPWField.Name = "lblPWField";
-            this.lblPWField.Size = new System.Drawing.Size(161, 15);
-            this.lblPWField.TabIndex = 3;
-            this.lblPWField.Text = "Your New Password Here";
-            // 
             // tbxPWField
             // 
-            this.tbxPWField.Location = new System.Drawing.Point(27, 288);
+            this.tbxPWField.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxPWField.Location = new System.Drawing.Point(27, 272);
             this.tbxPWField.MaxLength = 255;
             this.tbxPWField.Name = "tbxPWField";
             this.tbxPWField.ReadOnly = true;
@@ -134,13 +125,23 @@
             this.tbxPWField.Text = "Your new password will soon be here";
             this.tbxPWField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btnCopyToClipboard
+            // 
+            this.btnCopyToClipboard.Location = new System.Drawing.Point(156, 305);
+            this.btnCopyToClipboard.Name = "btnCopyToClipboard";
+            this.btnCopyToClipboard.Size = new System.Drawing.Size(111, 23);
+            this.btnCopyToClipboard.TabIndex = 5;
+            this.btnCopyToClipboard.Text = "Copy to Clipboard";
+            this.btnCopyToClipboard.UseVisualStyleBackColor = true;
+            this.btnCopyToClipboard.Click += new System.EventHandler(this.btnCopyToClipboard_Click);
+            // 
             // PWGMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(411, 340);
+            this.Controls.Add(this.btnCopyToClipboard);
             this.Controls.Add(this.tbxPWField);
-            this.Controls.Add(this.lblPWField);
             this.Controls.Add(this.btnGo);
             this.Controls.Add(this.gbxCharOpts);
             this.Controls.Add(this.lblTitle);
@@ -160,10 +161,10 @@
         private System.Windows.Forms.GroupBox gbxCharOpts;
         private System.Windows.Forms.CheckedListBox clbCharOpts;
         private System.Windows.Forms.Button btnGo;
-        private System.Windows.Forms.Label lblPWField;
         private System.Windows.Forms.Label lblCharNums;
         private System.Windows.Forms.NumericUpDown nudCharNums;
         private System.Windows.Forms.TextBox tbxPWField;
+        private System.Windows.Forms.Button btnCopyToClipboard;
     }
 }
 

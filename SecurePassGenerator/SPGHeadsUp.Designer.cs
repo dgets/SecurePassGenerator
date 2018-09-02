@@ -100,7 +100,6 @@
             this.clbCharOpts.Name = "clbCharOpts";
             this.clbCharOpts.Size = new System.Drawing.Size(188, 109);
             this.clbCharOpts.TabIndex = 2;
-            this.clbCharOpts.Click += new System.EventHandler(this.clbCharOpts_OnClick);
             // 
             // btnGo
             // 

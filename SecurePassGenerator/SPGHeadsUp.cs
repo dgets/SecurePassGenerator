@@ -15,7 +15,7 @@ namespace SecurePassGenerator
             { { "alphaLower", true }, { "alphaUpper", false }, 
               { "numbers", true }, { "symbols", false } };        
 
-        public bool debugging = true;
+        public bool debugging = false;
 
         public PWGMain() {        
             InitializeComponent();
@@ -36,8 +36,21 @@ namespace SecurePassGenerator
             }
         }
 
-        private void clbCharOpts_OnClick(object sender, EventArgs e) {
-            System.Collections.IEnumerator clbCharOptsIterator = 
+        private void btnGo_OnClick(object sender, EventArgs e) {
+            probeNSetPWSet();
+
+            Generator pwEngine = new Generator();
+
+            lblPWField.Text = pwEngine.getNewPW((int)nudCharNums.Value);
+        }
+
+        private void probeNSetPWSet() {
+            /*foreach (string charOption in charOpts.Keys) {
+                charOpts[charOption] = clbCharOpts.GetItemChecked(
+                    clbCharOpts.Items.IndexOf(charOption));
+            }*/
+
+            System.Collections.IEnumerator clbCharOptsIterator =
                 clbCharOpts.Items.GetEnumerator();
 
             while (clbCharOptsIterator.MoveNext()) {
@@ -55,16 +68,10 @@ namespace SecurePassGenerator
             }
         }
 
-        private void btnGo_OnClick(object sender, EventArgs e) {
+        /*private void clbCharOpts_MouseClick(object sender, MouseEventArgs e) {
             Generator pwEngine = new Generator();
 
             lblPWField.Text = pwEngine.getNewPW((int)nudCharNums.Value);
-        }
-
-        private void clbCharOpts_MouseClick(object sender, MouseEventArgs e) {
-            Generator pwEngine = new Generator();
-
-            lblPWField.Text = pwEngine.getNewPW((int)nudCharNums.Value);
-        }
+        }*/
     }
 }

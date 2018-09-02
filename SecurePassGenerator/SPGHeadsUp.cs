@@ -11,16 +11,23 @@ using System.Windows.Forms;
 namespace SecurePassGenerator
 {
     public partial class PWGMain : Form {
-        private Dictionary<string, bool> charOpts = new Dictionary<string, bool>
-                { { "alphabetic", true }, { "upper", false }, { "numeric", true },
-                  { "symbolic", false } };
+        public Dictionary<string, bool> charOpts = new Dictionary<string, bool>
+            { { "alphaLower", true }, { "alphaUpper", false }, 
+              { "numbers", true }, { "symbols", false } };        
+
+        public bool debugging = false;
 
         public PWGMain() {        
             InitializeComponent();
 
-            //global level init
             //GUI init
             initClbCharOpts();
+
+            //just for debugging
+            if (debugging) {
+                //longer passwords mean more data to work with
+                nudCharNums.Value = 128;
+            }
         }
 
         private void initClbCharOpts() {
@@ -28,5 +35,43 @@ namespace SecurePassGenerator
                 clbCharOpts.Items.Add(charOption, charOpts[charOption]);
             }
         }
+
+        private void btnGo_OnClick(object sender, EventArgs e) {
+            probeNSetPWSet();
+
+            Generator pwEngine = new Generator();
+
+            lblPWField.Text = pwEngine.getNewPW((int)nudCharNums.Value);
+        }
+
+        private void probeNSetPWSet() {
+            /*foreach (string charOption in charOpts.Keys) {
+                charOpts[charOption] = clbCharOpts.GetItemChecked(
+                    clbCharOpts.Items.IndexOf(charOption));
+            }*/
+
+            System.Collections.IEnumerator clbCharOptsIterator =
+                clbCharOpts.Items.GetEnumerator();
+
+            while (clbCharOptsIterator.MoveNext()) {
+                if (debugging) {
+                    MessageBox.Show(clbCharOptsIterator.Current.ToString());
+                }
+
+                //it may be a good idea to have a slightly more efficient algorithm here
+                if (clbCharOpts.GetItemCheckState(clbCharOpts.Items.IndexOf(
+                        clbCharOptsIterator.Current)) == CheckState.Checked) {
+                    charOpts[clbCharOptsIterator.Current.ToString()] = true;
+                } else {
+                    charOpts[clbCharOptsIterator.Current.ToString()] = false;
+                }
+            }
+        }
+
+        /*private void clbCharOpts_MouseClick(object sender, MouseEventArgs e) {
+            Generator pwEngine = new Generator();
+
+            lblPWField.Text = pwEngine.getNewPW((int)nudCharNums.Value);
+        }*/
     }
 }
